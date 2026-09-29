@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[black]">
+    
+    <header class="pt-10">
+        <div class="container mx-auto flex items-start justify-between">
+            <div class="flex items-center gap-5">
+                <button id="openModal" class="px-10 py-5 bg-[black] border-[white] border-1 hover:cursor-pointer text-[white]">
+                    Add student
+                </button>
+            </div>
+            <div>
+                <input class="p-5 bg-[white]" id="search" placeholder="search..." type="text">
+            </div>
+            <select class="w-full max-w-md h-[65px] border bg-[white] py-2" id="headerSelect">
+                <option value="All">All</option>
+                <option value="group-1">Group 1</option>
+                <option value="group-2">Group 2</option>
+                <option value="group-3">Group 3</option>
+            </select>
+        </div>
+        
+    </header>
+
+    <div id="outerModal" class="fixed hidden w-full h-screen top-0 z-5 flex items-center justify-center">
+        <form id="innerModal" class="max-w-[400px] w-full bg-[gray] p-5 mx-auto">
+            <div class="mb-5">
+                <label for="firstnameInput" class="block mb-2.5 text-sm font-medium text-heading">Ismingiz</label>
+                <input type="text" id="firstnameInput"
+                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow placeholder:text-body"
+                    placeholder="Firstname..." required />
+            </div>
+            <div class="mb-5">
+                <label for="lastnameInput" class="block mb-2.5 text-sm font-medium text-heading">Familiyangiz</label>
+                <input type="text" id="lastnameInput"
+                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow placeholder:text-body"
+                    placeholder="Lastname..." required />
+            </div>
+            <div class="mb-5">
+                <label for="email-alternative" class="block mb-2.5 text-sm font-medium text-heading">Gruhni tanlash</label>
+                <select class="w-full border py-2" id="selectGroup">
+                    <option value="group-1">Group 1</option>
+                    <option value="group-2">Group 2</option>
+                    <option value="group-3">Group 3</option>
+                </select>
+            </div>
+            <div class="flex items-start mb-5">
+                <label for="isWorkInput" class="flex items-center h-5">
+                    <input id="isWorkInput" type="checkbox" value=""
+                        class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
+                        />
+                    <p class="ms-2 text-sm font-medium text-heading select-none">Ishlaydimi?</p>
+                </label>
+            </div>
+            <button type="submit"
+                class="text-black bg-[white] w-full box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
+        </form>
+    </div>
+
+    <main class="pt-10">
+        <div class="container mx-auto">
+            <div class="relative text-[white] overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default border-[white]">
+                <table class="w-full text-sm text-left rtl:text-right text-body">
+                    <thead class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base bg-[gray] border-default border-[white]">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Firstname
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Lastname
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Group
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Work
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Functions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="showStudents">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
